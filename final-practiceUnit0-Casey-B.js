@@ -43,7 +43,18 @@ let age = readline.questionInt("What is your age? Age: ");
 let concern = readline.question("What is your primary health concern or diagnosis that you'd like to track? Diagnosis/ Concern: ");
 
 let firstUser = new User(name, email, age, concern);
-console.log(firstUser);
+
+console.log(firstUser); //Seeing that we made the right object with user input.
+
+//Now let's make sure the inputs to the string were what we want. If the user includes spaces, we want to trim them from email.
+//We also want their name in uppercase. Then, we check our work. This demonstrates use of the string methods.
+
+firstUser.name = firstUser.name.toUpperCase();
+console.log(firstUser.name);
+
+firstUser.email = firstUser.email.trim();
+console.log(firstUser.email);
+
 
 //Now let's make an array that would store the symptom levels being tracked. Say we decided to track Migraine pain levels over time. 
 //We'd want to ask the user for inputs, then store them in an array.
@@ -78,7 +89,7 @@ else {}
 // This will use lessons from the logic structures lesson to add all indices of the array one by one in a for loop.
 //This uses the lesson on arrays, data types and logic.
 
-let arraySum = 0;
+let arraySum = 0; //establishing the sum number we will use in the for loop
 let sampleSymptoms = [3,7,4,2,2,5,7,8,9,8,5,3,2,0];
 for (let i = 0; i < sampleSymptoms.length; i++) {
     arraySum += sampleSymptoms[i];
@@ -86,7 +97,7 @@ for (let i = 0; i < sampleSymptoms.length; i++) {
 console.log("Your lislt of symptom ratings are: " + arraySum);
 
 //Now, let's say someone wants to add a symptom rating to the array. We would use the push() method from the Math module.
-//Then we check to see if the 4 rating was added to the beginning of the array. This uses the lesson using arrays (the push method)
+//Then we check to see if the 4 rating was added to the end of the array. This uses the lesson using arrays (the push method)
 
 sampleSymptoms.push(4);
 console.log(sampleSymptoms);
